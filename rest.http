@@ -1,0 +1,51 @@
+GET http://localhost:5000/api/users/me HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc1MDc0ODU1N30.p9gV_8wi1FF6vv1XFuEkdKvjghFEMVUUQ5rJzjeyW0Q
+
+###
+
+POST http://localhost:5000/api/users/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "superadmin2",
+    "password": "z$446666G"
+}
+
+###
+
+POST http://localhost:5000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "superadmin2",
+    "password": "z$446666G"
+}
+
+###
+
+GET http://localhost:5000/api/wallet/ HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDc2MjA3N30.MDHEtzUU_isWZwyWaz2K0hDcpq7szAu949nIk7xk01c
+
+###
+
+PUT http://localhost:5000/api/wallet/topup HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJzdXBlcm1pbiIsImlhdCI6MTc1MDc1NTU2NX0.r1j6Glxg5efjAX5HxDIqqNjq3Qnw0SNc3fZjoyMi4Js
+
+{
+    "amount": 12.123123124
+}
+
+###
+
+PUT http://localhost:5000/api/wallet/deduct HTTP/1.1
+content-type: application/json
+authorization: Bearer   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJzdXBlcm1pbiIsImlhdCI6MTc1MDc1NTU2NX0.r1j6Glxg5efjAX5HxDIqqNjq3Qnw0SNc3fZjoyMi4Js
+
+{
+    "amount": 12.123123124
+}
+
+
