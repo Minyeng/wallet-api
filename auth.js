@@ -9,8 +9,13 @@ module.exports = async (req, res, next) => {
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         
-        const user = decoded;
-        req.user = await User.query().findById(user.id);
+        const user = await User.query().where('uuid', decoded.id).first();
+
+        req.user = {
+            id: user.id,
+            uuid: user.uuid,
+            username: user.username
+        }
         next();
     } catch (err) {
         if (err) {

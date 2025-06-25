@@ -8,8 +8,8 @@ POST http://localhost:5000/api/users/register HTTP/1.1
 content-type: application/json
 
 {
-    "username": "superadmin2",
-    "password": "z$446666G"
+    "username": "superadmin3",
+    "password": "Pas$w0rd"
 }
 
 ###
@@ -18,21 +18,21 @@ POST http://localhost:5000/api/users/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "superadmin2",
-    "password": "z$446666G"
+    "username": "superadmin3",
+    "password": "Pas$w0rd"
 }
 
 ###
 
-GET http://localhost:5000/api/wallet/ HTTP/1.1
+GET http://localhost:5000/api/wallet/saldo HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDgyMDQ5MCwiZXhwIjoxNzUwODI0MDkwfQ.j95bgVOc81va3Uz90E_mInwV9ntq6QgF2GbUNkIjEa0
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhNDU3YmRhLWNhNWUtNDJlYi05NmM4LTA1ZTliOTg0NzE4NSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbjMiLCJpYXQiOjE3NTA4MzgxNTYsImV4cCI6MTc1MDg0MTc1Nn0.KixTHBU5_I9-prSgG8B8pm7NjUzbJPIitchkufm3nSc
 
 ###
 
 PUT http://localhost:5000/api/wallet/topup HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDgxODk5Nn0.NMrcgp5NeTjJVToBF39ziKObZ36lxhQAA4uLWYL8TEA
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhNDU3YmRhLWNhNWUtNDJlYi05NmM4LTA1ZTliOTg0NzE4NSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbjMiLCJpYXQiOjE3NTA4MzgxNTYsImV4cCI6MTc1MDg0MTc1Nn0.KixTHBU5_I9-prSgG8B8pm7NjUzbJPIitchkufm3nSc
 
 {
     "amount": 1000000000000
@@ -42,7 +42,7 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hb
 
 PUT http://localhost:5000/api/wallet/deduct HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDgxODk5Nn0.NMrcgp5NeTjJVToBF39ziKObZ36lxhQAA4uLWYL8TEA
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhNDU3YmRhLWNhNWUtNDJlYi05NmM4LTA1ZTliOTg0NzE4NSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbjMiLCJpYXQiOjE3NTA4MzgxNTYsImV4cCI6MTc1MDg0MTc1Nn0.KixTHBU5_I9-prSgG8B8pm7NjUzbJPIitchkufm3nSc
 
 {
     "amount": 1000000000000

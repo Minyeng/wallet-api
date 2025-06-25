@@ -4,6 +4,8 @@ class User extends BaseModel {
   static get tableName() {
     return 'users';
   }
+  
+  static useUuid = true; 
 
   static get relationMappings() {
     const Wallet = require('./Wallet');
@@ -19,6 +21,7 @@ class User extends BaseModel {
       }
     };
   }
+  
 }
 
 module.exports = User;

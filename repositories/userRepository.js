@@ -5,6 +5,10 @@ const userRepository = {
     return User.query().where('username', username).first();
   },
 
+  async findByUuid(uuid) {
+    return User.query().where('uuid', uuid).first();
+  },
+
   async create(data) {
     return User.query().insert(data);
   },
