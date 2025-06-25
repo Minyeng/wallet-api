@@ -13,6 +13,11 @@ module.exports = async (req, res, next) => {
         req.user = await User.query().findById(user.id);
         next();
     } catch (err) {
-        res.status(401).json({ error: 'Invalid token' });
+        if (err) {
+            if (err.name === 'TokenExpiredError') {
+                return res.status(401).json({ error: 'Token expired' });
+            }
+            return res.status(401).json({ error: 'Invalid token' });
+        }
     }
 };

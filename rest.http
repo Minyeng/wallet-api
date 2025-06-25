@@ -26,26 +26,26 @@ content-type: application/json
 
 GET http://localhost:5000/api/wallet/ HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDc2MjA3N30.MDHEtzUU_isWZwyWaz2K0hDcpq7szAu949nIk7xk01c
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDgyMDQ5MCwiZXhwIjoxNzUwODI0MDkwfQ.j95bgVOc81va3Uz90E_mInwV9ntq6QgF2GbUNkIjEa0
 
 ###
 
 PUT http://localhost:5000/api/wallet/topup HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJzdXBlcm1pbiIsImlhdCI6MTc1MDc1NTU2NX0.r1j6Glxg5efjAX5HxDIqqNjq3Qnw0SNc3fZjoyMi4Js
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDgxODk5Nn0.NMrcgp5NeTjJVToBF39ziKObZ36lxhQAA4uLWYL8TEA
 
 {
-    "amount": 12.123123124
+    "amount": 1000000000000
 }
 
 ###
 
 PUT http://localhost:5000/api/wallet/deduct HTTP/1.1
 content-type: application/json
-authorization: Bearer   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJzdXBlcm1pbiIsImlhdCI6MTc1MDc1NTU2NX0.r1j6Glxg5efjAX5HxDIqqNjq3Qnw0SNc3fZjoyMi4Js
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJzdXBlcmFkbWluMiIsImlhdCI6MTc1MDgxODk5Nn0.NMrcgp5NeTjJVToBF39ziKObZ36lxhQAA4uLWYL8TEA
 
 {
-    "amount": 12.123123124
+    "amount": 1000000000000
 }
 
 

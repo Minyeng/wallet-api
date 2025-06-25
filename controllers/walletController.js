@@ -1,7 +1,7 @@
 const { User, Wallet, Transaction } = require('../models');
 const { increaseSaldoSchema } = require('../validators/walletValidator');
 
-const walletRepository = require('../repositories/walletRepository');
+const { walletRepository, transactionRepository } = require('../repositories');
 
 exports.getWallet = async (req, res) => {
   const wallet = await Wallet.query().findOne('user_id', req.user.id);
@@ -13,22 +13,24 @@ exports.getWallet = async (req, res) => {
 };
 
 exports.topUp = async (req, res) => {
-  const { error, value } = increaseSaldoSchema.validate(req.body, { abortEarly: false });
-
-  if (error) {
+  try {
+    await increaseSaldoSchema.validateAsync({ ...req.body, user_id: req.user.id}, { abortEarly: false });
+  }
+  catch (err) {
     return res.status(400).json({
       success: false,
       message: 'Validation failed',
-      errors: error.details.map(d => d.message)
+      errors: err.details.map(d => d.message)
     });
   }
 
   try {
-    const transaction = await Transaction.query().insert({
-      user_id: req.user.id
+    const transaction = await transactionRepository.create({
+      user_id: req.user.id,
+      amount: req.body.amount
     });
     
-    const wallet = await walletRepository.increaseSaldoByUserId(req.user.id, value.amount);
+    const wallet = await walletRepository.increaseSaldoByUserId(req.user.id, req.body.amount);
     
     res.status(201).json({ message: `Success`});
   } catch (err) {
@@ -39,22 +41,24 @@ exports.topUp = async (req, res) => {
 
 
 exports.deduct = async (req, res) => {
-  const { error, value } = increaseSaldoSchema.validate(req.body, { abortEarly: false });
-
-  if (error) {
+  try {
+    await increaseSaldoSchema.validateAsync({ amount: -1*req.body.amount, user_id: req.user.id}, { abortEarly: false });
+  }
+  catch (err) {
     return res.status(400).json({
       success: false,
       message: 'Validation failed',
-      errors: error.details.map(d => d.message)
+      errors: err.details.map(d => d.message)
     });
   }
 
   try {
-    const transaction = await Transaction.query().insert({
-      user_id: req.user.id
+    const transaction = await transactionRepository.create({
+      user_id: req.user.id,
+      amount: -1*req.body.amount
     });
     
-    const wallet = await walletRepository.increaseSaldoByUserId(req.user.id, -1*value.amount);
+    const wallet = await walletRepository.increaseSaldoByUserId(req.user.id, -1*req.body.amount);
     
     res.status(201).json({ message: `Success`});
   } catch (err) {
