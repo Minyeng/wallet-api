@@ -10,6 +10,22 @@
     <strong>PostgreSQL</strong> (Database)
   </li>
 </ul>
+
+<h2>📂 Project Structure</h2>
+<p data-start="940" data-end="1140">project-root/<br>
+├── controllers/<br>
+├── db/<br>
+├── migrations/<br>
+├── models/<br>
+├── repositories/<br>
+├── routes/<br>
+├── validators/<br>
+├── server.js<br>
+├── knexfile.js<br>
+├── auth.js<br>
+├── .env<br>
+└── package.json</p>
+
 <h2>📦 Getting Started</h2>
 <h3>Install dependencies</h3>
 <pre>
@@ -36,7 +52,6 @@
 <pre>
   npm run dev
 </pre>
-
 
 <h2>🌐 API Endpoints</h2>
 <ol>
